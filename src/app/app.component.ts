@@ -15,9 +15,22 @@ export class AppComponent {
 
   ngOnInit() {
     // assign API response to dateTimeObj on loading of application
+    this.service.getDateTimeAPI()
+    .subscribe((data)=>{
+      this.dateTimeObj = data;
+    },
+    (error:any)=>{
+
+    },
+    ()=>{
+
+    })
   }
 
   getDateTime() {
     // Use this function to parse the date returned by the API upon button click
+   this.date = this.dateTimeObj.getDate()
+   this.year = this.dateTimeObj.getFullYear();
+
   }
 }

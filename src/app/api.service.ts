@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { of } from 'rxjs/observable/of';
+
 
 @Injectable()
 export class ApiService {
@@ -9,7 +11,8 @@ export class ApiService {
 
   getDateTimeAPI() {
     // Call the API and return the response (change the code below)
-    let res: Response;
-    return res.json();
+  
+    let res = of(new Date());
+    return res;
   }
 }
